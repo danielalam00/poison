@@ -1,0 +1,47 @@
+=polaris_6.3
+%----------------------%
+%general options
+%----------------------%
+title "nn pin cell"
+lib "broad_n"
+%----------------------%
+% geometry
+%----------------------%
+geom W10 : ASSM npins=jp ppitch=pp1 SE
+%----------------------%
+% comps and mats
+%----------------------%
+comp c_u     : WT 92235=u235 92238=-100
+c_usi1
+matf
+mat  GAP.1   : FILLGAS temp=600
+comp_cl
+mat_cl
+comp GD2O3   : FORM Gd152=0.00142 Gd154=0.01494 Gd155=0.1032 Gd156=0.14438 Gd157=1.4 Gd158=0.17766 Gd160=0.1584 O=3
+comp_ugd
+mat_m
+comp WATER   : LW borppm=1
+mat  COOL.1  : WATER dens=0.72998 temp=571
+%-----------------------%
+% pins
+%-----------------------%
+pinF
+      : FUEL.1 GAP.1  CLAD.1 COOL.1
+pinP
+      : MIX.1  GAP.1  CLAD.1 COOL.1
+mesh FUEL : nr=3 ns= 8
+mesh MIX  : nr=10 ns= 8
+mesh CLAD :      ns= 4
+mesh COOL : nr=2 ns= 8
+%-----------------------%
+% maps
+%-----------------------%
+pinmap
+pmap
+%-----------------------%
+% burnup
+%-----------------------%
+pow pow_1
+t  0 8 30 120 240 360 480 960 1400 2200 3000 3140 3280 3420 3560 3700
+deplete ALL=no FUEL=yes MIX=yes
+end

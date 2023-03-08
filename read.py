@@ -43,7 +43,7 @@ def scale_read(nPin, solutions):
         if k_awal > 1:
             del_k = k_asli - k_awal
         else :
-            del_k = -100
+            del_k = k_awal - 1
         print('file dapat dibaca')
     except:
         knilai = [0.2, 0.3, 0.4, 0.5, 0.6]
@@ -64,7 +64,7 @@ def scale_read(nPin, solutions):
         ord = knilai_arr[-5:]
         print("file kosong ")
     if k_awal < 1:
-        del_k = -100
+        del_k = k_awal - 1
         day = 0
         print("to much poison ")
     else:
@@ -86,12 +86,12 @@ def scale_read(nPin, solutions):
             ind_last = index_subs[-1]
             selisih = ind_last - ind_first
             if len(index_subs) != (selisih + 1):
-                day = -1000000
-                del_k = -100
+                day = -1000
+                del_k = k_awal - 1
                 print("subcritical in the middle ")
             elif len(index_subs) != 0 and ind_last != 15 :
-                day = -1000000
-                del_k = -100
+                day = -1000
+                del_k = k_awal - 1
                 print("subcritical in the middle ")
     fitt = (day * 0.6 ) +(del_k *4000)
     print('fitness:', fitt,   'day:', day,   'delta k:', del_k)
