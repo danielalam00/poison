@@ -11,7 +11,7 @@ from read import scale_read
 from makepoison import scale_write
 
 #manually set parameters
-pins = 10      #coresponded to the total generated pins type
+pins = 15      #coresponded to the total generated pins type
 pin_maps = (math.ceil(pins/2))**2 #need to be adjust bassed on pins number
 total_parameters = pin_maps + 2
 bin_opt = [0, 1]   # binner option 
