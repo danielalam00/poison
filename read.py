@@ -5,7 +5,7 @@ import scipy as sp
 
 def scale_read(nPin, solutions):
 
-    time = [0, 8, 30, 120, 240, 360, 480, 960, 1400, 2200, 3000, 3140, 3280, 3420, 3560, 3700]
+    time = [0, 1, 2, 4, 8, 30, 120, 240, 360, 480, 960, 1400, 2200, 3000, 3140, 3280, 3420, 3560, 3700]
     time_arr = np.array(time)
     kw = 'Transport: k-eff ='
     #open output file
@@ -89,7 +89,7 @@ def scale_read(nPin, solutions):
                 day = -1000
                 del_k = k_awal - 1
                 print("subcritical in the middle ")
-            elif len(index_subs) != 0 and ind_last != 15 :
+            elif len(index_subs) != 0 and ind_last != 18 :
                 day = -1000
                 del_k = k_awal - 1
                 print("subcritical in the middle ")
